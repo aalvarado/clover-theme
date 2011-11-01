@@ -1,0 +1,2 @@
+module Clover-theme
+end
