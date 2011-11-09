@@ -1,5 +1,3 @@
-require 'rails/generators/migration'
-
 module CloverTheme
   module Generators
     class InstallGenerator < Rails::Generators::Base
