@@ -23,5 +23,13 @@ module CloverTheme
         end
       end
     end
+
+    def copy_javascript
+      if options.asset_pipeline?
+        directory 'javascript', 'app/assets/javascripts'
+      else
+        directory 'javascript', 'public/javascripts/themes/clover'
+      end
+    end
   end
 end
