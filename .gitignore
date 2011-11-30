@@ -7,4 +7,5 @@ test/dummy/tmp/
 test/dummy/app/sass/*
 test/dummy/public/stylesheets/*
 test/dummy/public/images/*
+test/dummy/public/javascripts/*
 tmp/*
