@@ -117,4 +117,5 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   rails (= 3.0.10)
+  rdoc
   turn
