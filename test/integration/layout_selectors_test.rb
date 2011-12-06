@@ -10,7 +10,7 @@ class LayoutSelectorsTest < ActiveSupport::IntegrationCase
     within "#wrapper" do
       test_selectors %w/#top #banner #mid #footer/
 
-      #Only the home page shows a banner
+      #Only the home page shows a banner with slider
       within "#banner" do
         test_selectors %w/#intro #slider/
 
@@ -27,6 +27,26 @@ class LayoutSelectorsTest < ActiveSupport::IntegrationCase
 
       test_footer_contact_info
     end
+  end
+
+  test "internal page" do
+    visit page_path( 'foo', 'bar' )
+
+    assert_equal 200, page.status_code
+    assert page.has_selector?( "#wrapper" )
+    assert page.has_selector?( "#banner" )
+    assert page.has_selector?( "#imid" )
+
+    within( "#imid" ) do
+      assert page.has_selector?( "#column" )
+      assert page.has_selector?( "#content" )
+
+      within( "#content" ) do
+        assert page.has_selector?( "h1" )
+      end
+    end
+
+    test_footer_contact_info
   end
 
   private
