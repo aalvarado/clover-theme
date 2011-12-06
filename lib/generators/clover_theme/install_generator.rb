@@ -30,6 +30,14 @@ module CloverTheme
           directory 'javascript', 'public/javascripts/themes/clover'
         end
       end
+
+      def copy_stylesheets
+        if options.asset_pipeline?
+          directory 'stylesheets/fancybox', 'app/assets/stylesheets/fancybox'
+        else
+          directory 'stylesheets/fancybox', 'public/stylesheets/fancybox'
+        end
+      end
     end
   end
 end
